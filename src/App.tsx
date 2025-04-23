@@ -14,7 +14,8 @@ function App() {
     }, [isAuthenticated, loginWithRedirect]);
 
     const logout = () => {
-        const baseUrl = ContextHolder.for("app-with-frontegg").getContext().baseUrl;
+        // @ts-ignore
+        const baseUrl = ContextHolder.for().getContext().baseUrl;
         window.location.href = `${baseUrl}/oauth/logout?post_logout_redirect_uri=${window.location.href}`;
     };
 
@@ -52,14 +53,8 @@ function App() {
                         Logout
                     </button>
                 </div>
-            ) : (
-                <button
-                    className="button button-primary"
-                    onClick={() => loginWithRedirect()}
-                >
-                    Login
-                </button>
-            )}
+            ) : null
+            }
         </div>
     )
 }

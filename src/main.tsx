@@ -23,7 +23,6 @@ root.render(
         <FronteggProvider
             contextOptions={contextOptions}
             hostedLoginBox={true}
-            appName="app-with-frontegg"
         >
             <BrowserRouter>
                <App />
